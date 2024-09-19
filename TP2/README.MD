@@ -28,13 +28,13 @@ Il est souvent utilisé pour la surveillance, le débogage, et la gestion de la 
 * ### Graphana LOKI  :
 
 
-PRESENTATION ET FONCTIONEMENTxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxx
+Grafana Loki, lancé en 2018 par Grafana Labs, est un outil open-source conçu pour collecter, analyser et visualiser des logs. Contrairement à d'autres solutions, Loki n'indexe pas le contenu des logs, mais se concentre sur les métadonnées, ce qui le rend plus léger et moins coûteux en termes de stockage.
+
+Les principales fonctionnalités de Loki incluent :
+
+* Collecte de logs : Loki peut ingérer des logs à partir de diverses sources.
+ * Recherche rapide : Grâce à l'utilisation des métadonnées, la recherche dans les logs est rapide et efficace.
+* Intégration avec Grafana : Loki s'intègre parfaitement avec Grafana, permettant de visualiser et d'explorer les logs aux côtés des métriques.
 
 
 ## Partie 2 : Choix et mise en oeuvre de la solution
