@@ -15,6 +15,7 @@ le but de ce travail est de collecter les données d'un serveur WEB.
 * ### Rsyslog : 
 
 ![logo](https://www.back-slash.net/enregistrer-ses-logs-rsyslog-sur-graylog/)
+![Alt text](https://www.back-slash.net/wp-content/uploads/Graylog/Rsyslog/rsyslog-1024x423.png "a title")
 
 Créé en 2004 par Rainer Gerhards, Rsyslog est un système de gestion des journaux (logs) pour Linux et Unix. Il est conçu pour collecter, filtrer et stocker les messages de log provenant du système et des applications.  
 
