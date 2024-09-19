@@ -14,8 +14,7 @@ le but de ce travail est de collecter les données d'un serveur WEB.
 
 * ### Rsyslog : 
 
-![logo](https://www.back-slash.net/enregistrer-ses-logs-rsyslog-sur-graylog/)
-![Alt text](https://www.back-slash.net/wp-content/uploads/Graylog/Rsyslog/rsyslog-1024x423.png "a title")
+<img src="https://www.rsyslog.com/logo7-2/" alt="Description" width="300" height="200">
 
 Créé en 2004 par Rainer Gerhards, Rsyslog est un système de gestion des journaux (logs) pour Linux et Unix. Il est conçu pour collecter, filtrer et stocker les messages de log provenant du système et des applications.  
 
@@ -29,7 +28,14 @@ Il est souvent utilisé pour la surveillance, le débogage, et la gestion de la 
 Lien vers le site de l'application : https://www.rsyslog.com/
 
 
-* ### Graphana LOKI  :
+* ### Graphana LOKI  :  
+<br>
+<br>
+
+<img src="https://www.netways.de/wp-content/uploads/2023/12/logo_product_loki.png" alt="Description" width="300" height="120">
+
+<br>
+<br>
 
 
 Grafana Loki, lancé en 2018 par Grafana Labs, est un outil open-source conçu pour collecter, analyser et visualiser des logs. Contrairement à d'autres solutions, Loki n'indexe pas le contenu des logs, mais se concentre sur les métadonnées, ce qui le rend plus léger et moins coûteux en termes de stockage.
@@ -44,6 +50,7 @@ Graphana loki présente un large avantage en therme de documentation technique e
 Lien vers le site de l'application : https://grafana.com/oss/loki/
 
 * ### Graylog :
+ 
 
 Graylog, créé en 2009, est un outil qui centralise et analyse les journaux d'événements (logs) de différents systèmes.
 
