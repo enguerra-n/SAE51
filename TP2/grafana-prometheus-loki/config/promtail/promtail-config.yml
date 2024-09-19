@@ -15,4 +15,4 @@ scrape_configs:
           - localhost
         labels:
           job: nginx
-          __path__: /var/log/*.log  # Répertoire où Nginx stocke ses logs
+          __path__: /var/log/nginx/*.log  # Répertoire où Nginx stocke ses logs
