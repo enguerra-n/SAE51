@@ -52,12 +52,10 @@ Lien vers le site de l'application : https://grafana.com/oss/loki/
 
 * ### Graylog :
  
- <br>
 <br>
 
 <img src="\graylog_logo.png" alt="logo graylog" width="300" height="120">
 
-<br>
 <br>
 
 Graylog, créé en 2009, est un outil qui centralise et analyse les journaux d'événements (logs) de différents systèmes.
