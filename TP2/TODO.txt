@@ -2,6 +2,10 @@ check si récupération logs OK
 
 
 ajout dans readme.md des attendues du sujets : 
-Produire un document de synthèse en Markdown présentant les solutions libres existantes de col-lecte, centralisation et présentation de logs. Vous donnerez leurs points-clés (features, communautéassociée, etc.) et leurs avantages et inconvénients respectifs. Vous vous intéresserez notammentaux possibilités de centralisation (collecte des logs issus de plusieurs conteneurs/machines), à lafacilité d’utilisation et d’installation, et aux possibilités offertes par les "dashboard"
+Produire un document de synthèse en Markdown présentant les solutions libres existantes de col-lecte, 
+centralisation et présentation de logs. Vous donnerez leurs points-clés (features, communautéassociée, etc.) 
+et leurs avantages et inconvénients respectifs. Vous vous intéresserez notammentaux possibilités de centralisation 
+(collecte des logs issus de plusieurs conteneurs/machines), à lafacilité d’utilisation et d’installation, 
+et aux possibilités offertes par les "dashboard"
 
 vérifier si le README.md correspond aux demanndes
