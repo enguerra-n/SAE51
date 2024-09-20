@@ -1,5 +1,7 @@
 check si récupération logs OK
 
+Faire le ménage dans les fichiers liées au dockers (check si des choses sont inutiles)
+
 
 ajout dans readme.md des attendues du sujets : 
 Produire un document de synthèse en Markdown présentant les solutions libres existantes de col-lecte, 
@@ -9,3 +11,4 @@ et leurs avantages et inconvénients respectifs. Vous vous intéresserez notamme
 et aux possibilités offertes par les "dashboard"
 
 vérifier si le README.md correspond aux demanndes
+
