@@ -16,7 +16,7 @@ Vous pouvez vérifier l'état des services en visitant les URL suivantes :
 - `localhost:3100/ready` : Cette page indique si l'application est prête. Si elle n'indique pas « ready », essayez d'actualiser la page, sinon pentientez quelque instants.
 - `localhost:3000` : Accéder à Grafana.
 
-*Merci de prendre en compte que ses url fonctionne si les applications sont sur votre machine, si elles sont sur une autre machine spécifier l'adresse IP de celle-ci au lieu de <localhost>*
+*Merci de prendre en compte que ses url fonctionne si les applications sont sur votre machine, si elles sont sur une autre machine spécifier l'adresse IP de celle-ci au lieu de localhost*
 
 ## Créer un nouveau Dashboard
 Importez un nouveau Dashboard pour la surveillance de Loki, comme celui qui porte l'identifiant **13639**, ou créez-en un nouveau.
