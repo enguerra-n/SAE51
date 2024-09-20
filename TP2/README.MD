@@ -54,7 +54,7 @@ Lien vers le site de l'application : https://grafana.com/oss/loki/
  <br>
 <br>
 
-<img src="\graylog-logo.png" alt="logo graylog" width="300" height="120">
+<img src="\graylog_logo.png" alt="logo graylog" width="300" height="120">
 
 <br>
 <br>
