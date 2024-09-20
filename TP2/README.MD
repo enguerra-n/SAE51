@@ -66,6 +66,7 @@ Lien vers le site de l'application : https://graylog.org/
 
 ## Partie 2 : Choix et mise en oeuvre de la solution
 
+### Graphique de fonctionement de l'infrastructure : 
 
-<img src="\usage-graphic.png" alt="schéma fonctionnement de l'applicatif" width="300">
+<img src="\usage-graphic.png" alt="Description" width="300">
 
