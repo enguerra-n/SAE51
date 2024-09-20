@@ -64,11 +64,8 @@ Graylog permet de :
 Lien vers le site de l'application : https://graylog.org/
 
 
-
-
-
-
-
-
 ## Partie 2 : Choix et mise en oeuvre de la solution
+
+
+<img src=".\Users\Quentin\Pictures\usage-graphic.png" alt="Description" width="300" height="520">
 
