@@ -75,7 +75,7 @@ Lien vers le site de l'application : https://graylog.org/
 
 ### Graphique de fonctionement de l'infrastructure : 
 
-<img src="\usage-graphic.png" alt="Description" width="300">
+<img src="\usage-graphic.png" alt="schéma du fonctionnement applicatif" width="300">
 
 ## Monitoring de logs
 Ce Dockerfile utilise Grafana, Loki, Promtail pour surveiller les journaux du serveur nginx. Grafana fournit un tableau de bord convivial, Loki agrège les journaux, Promtail scrape les journaux.
