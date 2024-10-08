@@ -1,39 +1,42 @@
+# Documentation et sources de référence pour la configuration de Promtail et l'API Docker
 # https://grafana.com/docs/loki/latest/clients/promtail/configuration/
 # https://docs.docker.com/engine/api/v1.41/#operation/ContainerList
-server:
-  http_listen_port: 9080
-  grpc_listen_port: 0
 
-positions:
-  filename: /tmp/positions.yaml
+server:  
+  http_listen_port: 9080  
+  grpc_listen_port: 0 
 
-clients:
-  - url: http://loki:3100/loki/api/v1/push
+positions:  
+  filename: /tmp/positions.yaml  # Fichier local où Promtail enregistre sa position de lecture dans les logs pour reprendre là où il s'était arrêté
 
-scrape_configs:
-  - job_name: flog_scrape 
-    docker_sd_configs:
-      - host: unix:///var/run/docker.sock
-        refresh_interval: 5s
-        filters:
-          - name: label
-            values: ["logging=promtail"] 
-    relabel_configs:
-      - source_labels: ['__meta_docker_container_name']
-        regex: '/(.*)'
-        target_label: 'container'
-      - source_labels: ['__meta_docker_container_log_stream']
-        target_label: 'logstream'
-      - source_labels: ['__meta_docker_container_label_logging_jobname']
-        target_label: 'job'
-    pipeline_stages:
-      - cri: {}
-      - multiline:
-          firstline: ^\d{4}-\d{2}-\d{2} \d{1,2}:\d{2}:\d{2},\d{3}
-          max_wait_time: 3s
+clients: 
+  - url: http://loki:3100/loki/api/v1/push  
+
+scrape_configs:  
+  - job_name: flog_scrape  
+    docker_sd_configs:  # Utilisation de la découverte de services Docker pour collecter les logs
+      - host: unix:///var/run/docker.sock  # Utilisation de la socket Docker pour interagir avec le daemon Docker local
+        refresh_interval: 5s  
+        filters:  
+          - name: label  
+            values: ["logging=promtail"]  # Ne sélectionner que les conteneurs ayant l'étiquette "logging=promtail"
+
+    relabel_configs: 
+      - source_labels: ['__meta_docker_container_name']  # Utilisation du nom du conteneur comme source
+        regex: '/(.*)'  # Extraction du nom sans le préfixe "/"
+        target_label: 'container'  # Le nom du conteneur sera utilisé dans le label "container"
+      - source_labels: ['__meta_docker_container_log_stream']  # Utilisation du flux de log du conteneur Docker
+        target_label: 'logstream'  # Assigne ce flux de log au label "logstream"
+      - source_labels: ['__meta_docker_container_label_logging_jobname']  # Utilisation de l'étiquette Docker "logging_jobname"
+        target_label: 'job'  # Affecte cette étiquette au label "job" dans Loki
+
+    pipeline_stages:  
+      - cri: {}  # Parsing des logs au format CRI (Container Runtime Interface)
+      - multiline:  #
+          firstline: ^\d{4}-\d{2}-\d{2} \d{1,2}:\d{2}:\d{2},\d{3}  # Détecte une ligne de début de log avec un timestamp 
+          max_wait_time: 3s  
+
       # https://grafana.com/docs/loki/latest/clients/promtail/stages/json/
-      - json:
-          expressions:
-            #message: message
-            level: level
-            #output: 'message'
+      - json: 
+          expressions:  
+            level: level  # Extrait le champ "level" du log 
