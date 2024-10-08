@@ -1,6 +1,4 @@
-check si récupération logs OK
 
-Faire le ménage dans les fichiers liées au dockers (check si des choses sont inutiles)
 
 
 ajout dans readme.md des attendues du sujets : 
