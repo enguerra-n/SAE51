@@ -100,11 +100,12 @@ Vous pouvez vérifier l'état des services en visitant les URL suivantes :
 
 ## Créer un nouveau Dashboard
 Nous vous propons le code de requête suivante pour vérifier les logs avec le status 'error' : 
+
 `sum by(service_name) (rate({level="error"} [1m])) `
+
 mettre en Time series pour avoir un graph qui affiche quels sont les services qui ont le plus d'error
 
 ` {level="error"} |= `` `
-pour afficher les log avec le niveau erreur en table
-<a href="https://grafana.com/grafana/dashboards/13639-logs-app/">Documentation de celui-ci</a>
+pour afficher les log avec le niveau erreur en table.
 
 
