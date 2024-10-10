@@ -1,12 +1,12 @@
 version: '3.8'  
 
 x-logging: 
- &default-logging  # Définition d'une ancre appelée réutiliser cette configuration
- driver: "json-file"  # stocker les logs en JSON
+ &default-logging  # création d'une variable pour la réutiliser
+ driver: "json-file"  # stocke les logs en JSON
  options: 
   max-size: "1m"  # Limite la taille des fichiers de log à 1 mégaoctet
   max-file: "1"  # Limite le nombre de fichiers de log à 1
-  tag: "{{.Name}}"  # Utilise le nom du conteneur comme tag pour les logs
+  tag: "{{.Name}}"  # Utilise le nom du conteneur comme nom pour les logs
 
 
 
@@ -30,15 +30,15 @@ services:
   container_name: grafana  
   ports: 
    - 3000:3000  
-  volumes:  # Montage de volumes pour persister les données de configuration
+  volumes:  # Montage de volumes pour garder les données de configuration
    - ./config/grafana/datasources/grafana.yaml:/etc/grafana/provisioning/datasources/datasources.yaml  # Configuration des sources de données
    - ./config/grafana/plugins/app.yaml:/etc/grafana/provisioning/plugins/app.yaml  # Configuration des plugins
   environment:  
    - GF_AUTH_ANONYMOUS_ENABLED=true  # Active l'accès anonyme
    - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin  # Donne les droits d'admin aux utilisateurs anonymes
    - GF_AUTH_DISABLE_LOGIN_FORM=true  # Désactive le formulaire de login
-   - GF_FEATURE_TOGGLES_ENABLE=accessControlOnCall lokiLogsDataplane  # Active certaines fonctionnalités spécifiques
-   - GF_INSTALL_PLUGINS=https://storage.googleapis.com/integration-artifacts/grafana-lokiexplore-app/grafana-lokiexplore-app-latest.zip;grafana-lokiexplore-app  # Installation d'un plugin externe depuis une URL
+   - GF_FEATURE_TOGGLES_ENABLE=accessControlOnCall lokiLogsDataplane  
+   - GF_INSTALL_PLUGINS=https://storage.googleapis.com/integration-artifacts/grafana-lokiexplore-app/grafana-lokiexplore-app-latest.zip;grafana-lokiexplore-app  # Installation d'un plugin pour accéder à explorer
   networks:
    - app  
   logging: *default-logging  
@@ -49,7 +49,7 @@ services:
   container_name: loki  
   ports:
    - 3100:3100  
-  command: -config.file=/etc/loki/loki.yaml  # Spécifie un fichier de configuration personnalisé pour Loki
+  command: -config.file=/etc/loki/loki.yaml  # indique le config file pour loki
   volumes: 
    - ./config/loki/loki.yaml:/etc/loki/loki.yaml  # Chemin local du fichier de configuration de Loki
   networks:
@@ -66,7 +66,7 @@ services:
    - /var/run/docker.sock:/var/run/docker.sock  # Accès à la socket Docker pour lire les événements de conteneurs
   command: -config.file=/etc/promtail/docker-config.yaml  # Utilise un fichier de configuration spécifique pour Promtail
   depends_on:
-   - loki  # Le service "promtail" dépend du service "loki" (il doit démarrer après)
+   - loki  # créer une dépendance pour promtail sur loki (il doit démarrer après)
   networks:
    - app  
   logging: *default-logging  
