@@ -1,4 +1,4 @@
-# Documentation et sources de référence pour la configuration de Promtail et l'API Docker
+# info globale de docs
 # https://grafana.com/docs/loki/latest/clients/promtail/configuration/
 # https://docs.docker.com/engine/api/v1.41/#operation/ContainerList
 
@@ -7,7 +7,7 @@ server:
   grpc_listen_port: 0 
 
 positions:  
-  filename: /tmp/positions.yaml  # Fichier local où Promtail enregistre sa position de lecture dans les logs pour reprendre là où il s'était arrêté
+  filename: /tmp/positions.yaml  # Fichier local où Promtail enregistre sa position de lecture dans les logs 
 
 clients: 
   - url: http://loki:3100/loki/api/v1/push  
@@ -19,7 +19,7 @@ scrape_configs:
         refresh_interval: 5s  
         filters:  
           - name: label  
-            values: ["logging=promtail"]  # Ne sélectionner que les conteneurs ayant l'étiquette "logging=promtail"
+            values: ["logging=promtail"]  # selectionne unique promtail pour les logs
 
     relabel_configs: 
       - source_labels: ['__meta_docker_container_name']  # Utilisation du nom du conteneur comme source
@@ -31,7 +31,7 @@ scrape_configs:
         target_label: 'job'  # Affecte cette étiquette au label "job" dans Loki
 
     pipeline_stages:  
-      - cri: {}  # Parsing des logs au format CRI (Container Runtime Interface)
+      - cri: {}  # permet de 'parser' les logs en format CRI
       - multiline:  #
           firstline: ^\d{4}-\d{2}-\d{2} \d{1,2}:\d{2}:\d{2},\d{3}  # Détecte une ligne de début de log avec un timestamp 
           max_wait_time: 3s  
