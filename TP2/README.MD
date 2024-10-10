@@ -86,7 +86,7 @@ Ce Dockerfile utilise Grafana, Loki, Promtail pour surveiller les journaux du se
 - **Nginx** : serveur web permettant de générer des logs
 
 ## Exécution de l'application
-Pour lancer l'application, utilisez la commande suivante : `docker compose up -d`
+Pour lancer l'application, utilisez la commande suivante : `docker compose up`
 Cette commande utilise Docker Compose pour démarrer l'application.
 
 ## Vérifier l'état des services
@@ -99,7 +99,12 @@ Vous pouvez vérifier l'état des services en visitant les URL suivantes :
 *Merci de prendre en compte que ses url fonctionne si les applications sont sur votre machine, si elles sont sur une autre machine spécifier l'adresse IP de celle-ci au lieu de localhost*
 
 ## Créer un nouveau Dashboard
-Importez un nouveau Dashboard pour la surveillance de Loki, comme celui qui porte l'identifiant **13639**, ou créez-en un nouveau.
+Nous vous propons le code de requête suivante pour vérifier les logs avec le status 'error' : 
+`sum by(service_name) (rate({level="error"} [1m])) `
+mettre en Time series pour avoir un graph qui affiche quels sont les services qui ont le plus d'error
+
+` {level="error"} |= `` `
+pour afficher les log avec le niveau erreur en table
 <a href="https://grafana.com/grafana/dashboards/13639-logs-app/">Documentation de celui-ci</a>
 
 
