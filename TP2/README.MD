@@ -110,8 +110,11 @@ mettre en Time series pour avoir un graph qui affiche quels sont les services qu
 pour afficher les log avec le niveau erreur en table.
 
 
-pour visualiser les logs de nginx sous graoh : 
-'count without(container) (rate({container="nginx-app"} |= `error` [$__auto]))'
+pour visualiser les logs de nginx sous graph : 
+
+' count without(container) (rate({container="nginx-app"} |= `error` [$__auto])) '
 
 en table de logs : 
-'{container="nginx-app"} |= ``'
+
+
+' {container="nginx-app"} |= `` '
