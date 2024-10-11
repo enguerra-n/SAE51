@@ -32,7 +32,6 @@ services:
    - 3000:3000  
   volumes:  # Montage de volumes pour garder les données de configuration
    - ./config/grafana/datasources/grafana.yaml:/etc/grafana/provisioning/datasources/datasources.yaml  # Configuration des sources de données
-   - ./config/grafana/plugins/app.yaml:/etc/grafana/provisioning/plugins/app.yaml  # Configuration des plugins
   environment:  
    - GF_AUTH_ANONYMOUS_ENABLED=true  # Active l'accès anonyme
    - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin  # Donne les droits d'admin aux utilisateurs anonymes
