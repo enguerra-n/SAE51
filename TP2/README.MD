@@ -112,9 +112,9 @@ pour afficher les log avec le niveau erreur en table.
 
 pour visualiser les logs de nginx sous graph : 
 
-' count without(container) (rate({container="nginx-app"} |= `error` [$__auto])) '
+` count without(container) (rate({container="nginx-app"} |= `error` [$__auto])) `
 
 en table de logs : 
 
 
-' {container="nginx-app"} |= `` '
+` {container="nginx-app"} |= `` `
