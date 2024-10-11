@@ -100,7 +100,7 @@ Vous pouvez vérifier l'état des services en visitant les URL suivantes :
 *Merci de prendre en compte que ses url fonctionne si les applications sont sur votre machine, si elles sont sur une autre machine spécifier l'adresse IP de celle-ci au lieu de localhost*
 
 ## Créer un nouveau Dashboard
-Nous vous propons le code de requête suivante pour vérifier les logs avec le status 'error' : 
+Nous vous proposons le code de requête suivante pour vérifier les logs avec le status 'error' : 
 
 `sum by(service_name) (rate({level="error"} [1m])) `
 
@@ -110,3 +110,8 @@ mettre en Time series pour avoir un graph qui affiche quels sont les services qu
 pour afficher les log avec le niveau erreur en table.
 
 
+pour visualiser les logs de nginx sous graoh : 
+'count without(container) (rate({container="nginx-app"} |= `error` [$__auto]))'
+
+en table de logs : 
+'{container="nginx-app"} |= ``'
