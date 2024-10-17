@@ -78,7 +78,7 @@ Lien vers le site de l'application : https://graylog.org/
 
 ## Monitoring de logs
 Ce Dockerfile utilise Grafana, Loki, Promtail pour surveiller les journaux du serveur nginx. Grafana fournit un tableau de bord convivial, Loki agrège les journaux, Promtail scrape les journaux.
-Afin de réalisé les tests nous avons choisi d'utiliser un conteneur générateur de logs qui envoie les données directement à LOKI. 
+Nous proposons l'utilisation d'un conteneur qui génère de logs qui envoie les données directement à LOKI sans passer par promtail. 
 
 ## Composants
 - **Grafana** : Une plateforme open-source pour la surveillance et l'observabilité. Elle permet d'interroger, de visualiser, d'alerter et de comprendre les métriques.
